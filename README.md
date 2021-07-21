@@ -29,6 +29,6 @@
     - php artisan migrate:fresh
     - mkdir /public/storage/profile_images/ (this folder stores profile images)
     - php artisan storage:link
-    - mysql -u DB_USERNAME -p DB_NAME asanas_data.sql
-    - mysql -u DB_USERNAME -p DB_NAME disease_data.sql
+    - mysql -u DB_USERNAME -p DB_NAME < asanas_data.sql
+    - mysql -u DB_USERNAME -p DB_NAME < disease_data.sql
     - php artisan serve
