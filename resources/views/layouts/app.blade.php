@@ -80,8 +80,8 @@
 
                 @auth<a class="leading-none flex justify-center px-4 py-2 mt-2 text-xl"
                     style="line-height: 0px; padding: 2rem;" href="{{ route('dashboard') }}">Dashboard</a>@endauth
-                <a class="leading-none flex justify-center px-4 py-2 mt-2 text-xl"
-                    style="line-height: 0px; padding: 2rem;" href="{{ route('team') }}">Team</a>
+                {{-- <a class="leading-none flex justify-center px-4 py-2 mt-2 text-xl"
+                    style="line-height: 0px; padding: 2rem;" href="{{ route('team') }}">Team</a> --}}
 
                 <a class="leading-none flex justify-center px-4 py-2 mt-2 text-xl"
                     style="line-height: 0px; padding: 2rem;" href="/#contactUs">Contact us</a>
@@ -94,15 +94,15 @@
                 @auth <div @click.away="open = false" class="relative" x-data="{ open: false }">
                         <button @click="open = !open"
                             class="flex justify-center flex flex-row items-center w-full px-4 py-2 mt-2 focus:outline-none focus:shadow-outline">
-                            <span
-                                style="line-height: 0px; font-size:1.25rem; padding: 1.5rem;">{{ auth()->user()->username }}</span>
+                            <span style="line-height: 0px; font-size:1.5rem; padding: 0.8rem;"><i
+                                    class="fas fa-user-circle"></i></span>
 
-                            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                            {{-- <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
                                 class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
                                 <path fill-rule="evenodd"
                                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                                     clip-rule="evenodd"></path>
-                            </svg>
+                            </svg> --}}
                         </button>
 
                         <div x-show="open" x-transition:enter="transition ease-out duration-100"
