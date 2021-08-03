@@ -88,7 +88,7 @@
         .content button {
             transition: 0.2s ease-in;
             background-color: #454659;
-            width: 180px;
+            width: auto;
             height: 70px;
             border: none;
             border-radius: 25px;
@@ -101,7 +101,7 @@
 
         .content button:hover {
             /* background-color: #3333ff; */
-            width: 180px;
+            width: auto;
             height: 70px;
             border: none;
             border-radius: 25px;
@@ -321,20 +321,20 @@
             font-style: italic;
         }
 
-        .color-benefits{
+        .color-bexnefits {
             background-color: #ccdbfd;
         }
 
-        .color-text{
+        .color-txext {
             background-color: #edf2fb;
         }
 
-        .color-contact{
-            background-color: #e2eafc;
+        .color-contact {
+            background-color: #bee9e8;
         }
 
-        .color-footer{
-            background-color: #abc4ff;
+        .color-footer {
+            background-color: #62b6cb;
         }
 
     </style>
@@ -349,17 +349,20 @@
                     This program is built to give you personalized yoga recommendations
                     so you can have a healthy lifestyle.
                 </p>
-                <?php if (
-                auth()
-                ->guard()
-                ->guest()
-                ): ?>
-                <a href="/register">
-                    <button type="button button1" class="home-signup">
-                        Sign Up
-                    </button>
-                </a>
-                <?php endif; ?>
+                @guest
+                    <a href="/register">
+                        <button type="button button1 whitespace-nowrap" class="home-signup">
+                            <span class="px-5">Sign Up</span>
+                        </button>
+                    </a>
+                @endguest
+                @auth
+                    <a href="/dashboard">
+                        <button type="button button1 whitespace-nowrap" class="home-signup">
+                            <span class="px-5">Recommend Me</span>
+                        </button>
+                    </a>
+                @endauth
             </div>
         </div>
 
@@ -379,14 +382,7 @@
 
     </div>
 
-    <div class="flex flex-wrap overflow-hidden color-benefits">
-        <div class="flex flex-col items-center my-1 px-1 w-full overflow-hidden ">
-            <h1 class="text-4xl py-10 ml">
-                Benefits of Yoga
-            </h1>
-        </div>
 
-    </div>
 
 
     <div class="flex flex-wrap overflow-hidden color-benefits">
@@ -405,12 +401,21 @@
 
 
         <div class="w-full h-screen overflow-hidden md:w-1/2 lg:w-1/2 xl:w-1/2 color-text">
+            <div class="flex flex-wrap overflow-hidden color-benefits">
+                <div class="flex flex-col items-center my-1 px-1 w-full overflow-hidden ">
+                    <h1 class="text-4xl py-10 ml">
+                        Benefits of Yoga
+                    </h1>
+                </div>
+
+            </div>
             <div class="contentt">
                 <p class="content-desc">
                     ➼ Medical professionals and celebrities are also adopting and recommending the regular practice of yoga
                     due its various benefits.
                 </p>
-                <p class="content-desc">➼ Yoga is not just about bending or twisting the body and holding the breath. It is a
+                <p class="content-desc">➼ Yoga is not just about bending or twisting the body and holding the breath. It is
+                    a
                     technique to bring you into a state where you see and experience reality simply the way it is. </p>
                 <p class="content-desc">➼ If you enable your energies to become exuberant and ecstatic, your sensory body
                     expands.</p>
@@ -923,12 +928,13 @@
 
             <div class="w-full overflow-hidden sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2">
                 <!-- Column Content -->
-                <div class="text-center pl-6 font-bold">Yoga Recommendation System</div>
+                <div class="text-center pl-6 font-bold text-2xl">Yoga Recommendation System</div>
             </div>
 
             <div class="w-full overflow-hidden sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2">
                 <!-- Column Content -->
-                <div class="ml-auto text-center pr-6"> <i class="fa fa-copyright" aria-hidden="true"></i> 2021 YRS, All
+                <div class="ml-auto text-center pr-6 text-2xl"> <i class="fa fa-copyright" aria-hidden="true"></i> 2021 YRS,
+                    All
                     Rights
                     Reserved
                 </div>
